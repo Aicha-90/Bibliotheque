@@ -1,1 +1,19 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="content">
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>Menu</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <ion-list>
+            <button ion-button (click)="onNavigate(booksPage)">Livres</button>
+            <button ion-button (click)="onNavigate(cdsPage)">Cds</button>
+            <button ion-button (click)="onNavigate(reglagesPage)">Réglages</button>
+            <button ion-button>Mon compte</button>
+            <button ion-button>Déconnexion</button>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+
+
+<ion-nav [root]="tabsPage" #content></ion-nav>

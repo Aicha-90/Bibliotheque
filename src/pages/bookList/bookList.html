@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-navbar>
+        <ion-buttons start>
+            <button ion-button icon-only (click)="onToggleMenu()">
+              <ion-icon name="menu"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>Livres</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <ion-item *ngFor="let book of booksList, let i=index"
+                    (click)="onLoadBook(i)">
+            <ion-icon name="book" [color]="book.isLend ? 'danger' : 'secondary' "></ion-icon>
+            {{ book.title }}
+        </ion-item>
+    </ion-list>
+</ion-content>
+
+<ion-footer padding>
+    <p>Bas de page</p>
+</ion-footer>

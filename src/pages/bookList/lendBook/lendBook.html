@@ -1,0 +1,29 @@
+<ion-content padding>
+    <ion-card [ngClass]="{ 'is-not-lend': !book.isLend, 'is-lend': book.isLend }">
+        <ion-card-header>
+            {{ book.title }}
+        </ion-card-header>
+            <ion-card-content>
+                {{ book.title }}
+                {{ book.nomAuteur }}
+            </ion-card-content>
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <button ion-button
+                            full
+                            color="danger"
+                            [disabled]="!book.isLend" 
+                            (click)="onToggleLend()">Rendre</button>
+                </ion-col>
+                <ion-col>
+                    <button ion-button 
+                            full
+                            color="secondary"
+                            [disabled]="book.isLend"
+                            (click)="onToggleLend()">Prêter</button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card>
+</ion-content>>
